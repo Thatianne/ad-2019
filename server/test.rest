@@ -1,0 +1,54 @@
+@host = localhost
+@protocol = http
+@port = 3333
+
+@baseUrl = {{protocol}}://{{host}}:{{port}}
+
+@contentType = application/json
+
+@id = 5f1881458acaefb6cce35341
+
+
+POST {{baseUrl}}/users
+Content-Type: {{contentType}}
+
+{
+    "name": "Thati",
+    "email": "thatianne.cristinaoo@gmail.com"
+}
+
+###
+POST {{baseUrl}}/users
+Content-Type: {{contentType}}
+
+{
+    "name": "Flávia",
+    "email": "flaviarodrigues158@gmail.com"
+}
+
+###
+PUT {{baseUrl}}/users/{{id}}
+Content-Type: {{contentType}}
+
+{
+    "name": "Thati",
+    "email": "thatianne.cristinaoo@gmail.com"
+}
+
+###
+
+GET {{baseUrl}}/users
+Content-Type: {{contentType}}
+
+###
+DELETE {{baseUrl}}/users/{{id}}
+Content-Type: {{contentType}}
+
+###
+POST {{baseUrl}}/raffle
+Content-Type: {{contentType}}
+
+###
+
+POST {{baseUrl}}/try
+Content-Type: {{contentType}}
