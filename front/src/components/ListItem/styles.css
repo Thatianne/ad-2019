@@ -1,0 +1,13 @@
+.list-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.list-item-info > span:first-child {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.list-item-info > span {
+    padding: 4px 0;
+}
