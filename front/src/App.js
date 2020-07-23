@@ -12,6 +12,7 @@ import { raffle } from './services/api/app'
 
 const App = () => {
   const [ users, setUsers ] = useState([])
+  const [ raffleLabel, setRaffleLabel ] = useState('Sortear')
 
   useEffect(() => {
     updateUsersList()
@@ -33,12 +34,15 @@ const App = () => {
 
   function handleRaffle(e) {
     e.preventDefault()
+    setRaffleLabel('Sorteando...')
     raffle()
     .then(result => {
       NotificationManager.success("Sorteio realizado!")
+      setRaffleLabel('Sortear')
     })
     .catch(err => {
       NotificationManager.error(err.response.data.message)
+      setRaffleLabel('Sortear')
     })
   }
 
@@ -48,7 +52,7 @@ const App = () => {
       <Box>
         <div className="flex-end raffle-box">
           <Button
-              text="Sortear"
+              text={raffleLabel}
               type="success"
               onClick={handleRaffle}
             />

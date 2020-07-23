@@ -1,6 +1,5 @@
 const User = require('./../models/User')
 const Email = require('./../services/email')
-const EmailV2 = require('./../services/emailV2')
 const generateRandom = require('./../helpers/generateRandom')
 const { OK_CODE } = require('./../error/constants')
 
@@ -46,23 +45,6 @@ const methods = {
                 .catch(err => next(err))
             })
         })
-    },
-
-    try(req, res, next) {
-        console.log('try')
-        const sender = new EmailV2()
-        sender.send({
-            from: 'Thatianne <me@samples.mailgun.org>',
-            to: 'thatianne.cristina@hotmail.com',
-            subject: 'Teste abc',
-            text: 'Um texto qualquer'
-        })
-        .then(result => {
-            console.log(result)
-            res.status(OK_CODE)
-            return res.send()
-        })
-        .catch(err => console.log(err))
     }
 }
 

@@ -1,23 +1,20 @@
-const nodemailer = require('nodemailer')
+const sgMail = require('@sendgrid/mail');
 
 class Email {
     constructor() {
-        this.transporter = nodemailer.createTransport({
-            service: process.env.EMAIL_SERVICE,
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD
-            }
-        })
+        this.sgMail = sgMail
+        this.sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     }
 
-    async send({ to, subject, text, from = process.env.EMAIL_USER }) {
-        await this.transporter.sendMail({
-            from,
+    async send({ to, subject, text }) {
+        const msg = {
+            from: process.env.SENDGRID_SENDER,
             to,
             subject,
             text
-        })
+        };
+
+        await this.sgMail.send(msg);
     }
 }
 
