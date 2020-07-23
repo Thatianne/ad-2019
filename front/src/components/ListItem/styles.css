@@ -2,6 +2,7 @@
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 8px;
     padding: 16px 32px;
+    flex-wrap: wrap;
 }
 
 .list-item-info > span:first-child {
@@ -15,4 +16,8 @@
 
 .list-item-edit .buttons-group {
     margin-top: 16px;
+}
+
+.list-item button {
+    margin: 8px;
 }
