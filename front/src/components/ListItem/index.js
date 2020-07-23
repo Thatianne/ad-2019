@@ -104,6 +104,7 @@ const ListItem = (props) => {
                                     {props.labels[column]}
                                 </label>
                                 <input
+                                    required
                                     value={values[column]}
                                     onChange={e => handleInputChange(column, e.target.value)}
                                 />

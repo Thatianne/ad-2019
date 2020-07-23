@@ -44,6 +44,7 @@ const UserForm = (props) => {
             <div className="form-group">
                 <label>Nome</label>
                 <input
+                    required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
@@ -52,7 +53,8 @@ const UserForm = (props) => {
             <div className="form-group">
                 <label>E-mail</label>
                 <input
-                    type="text"
+                    type="email"
+                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
