@@ -10,6 +10,8 @@ const List = (props) => {
         email: "E-mail"
     }
 
+    console.log(items)
+
     function handleDelete() {
         if (typeof props.onDelete === 'function') {
             props.onDelete(props.item)
@@ -19,11 +21,11 @@ const List = (props) => {
     return (
         <div className="list">
             {
-                items.map((item, index) => (
+                items.map(item => (
                     <ListItem
                         labels={labels}
                         item={item}
-                        key={index}
+                        key={item._id}
                         onDelete={handleDelete}
                     />
                 ))
