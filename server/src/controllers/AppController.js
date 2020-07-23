@@ -17,6 +17,10 @@ const methods = {
             const amount = users.length
             const usersToFriend = []
 
+            if (users.length < 2) {
+                return next(new Error('Não é possível sortear com apenas um ou nenhum participante'))
+            }
+
             users.forEach((user, index) => {
                 const number = generateRandom(0, amount - 1, usersToFriend.concat([index]))
                 usersToFriend.push(number)

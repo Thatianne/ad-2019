@@ -24,7 +24,7 @@ const methods = {
             res.status(CREATED_CODE)
             return res.json(user)
         }).catch(err => {
-            next(new BadRequest(err.errmsg))
+            next(new BadRequest(err.errmsg ? err.errmsg : err._message))
         })
     },
     update(req, res, next) { // atualizar

@@ -1,6 +1,10 @@
 
 .App {
   height: 100%;
-  background-color: #f9f9f9;
-  /* background-color: #555870; */
+  background-color: #fbfbfb;
+}
+
+
+.raffle-box {
+  padding: 32px 32px 0;
 }
